@@ -1,5 +1,6 @@
 body {
   background-color: #121212;
+  font-family: 'Noto Serif JP', sans-serif;
 }
 
 h1 {
@@ -17,9 +18,13 @@ h1 {
   justify-content: space-evenly;
 }
 
+a {
+  text-decoration: none;
+}
+
 .page {
   width: 800px;
-  height: 80px;
+  height: 100px;
   background-color: #181818;
   display: flex;
   justify-content: center;
