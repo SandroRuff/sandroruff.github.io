@@ -29,6 +29,9 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  border: 2px solid #ffffff10;
+  border-radius: 5px;
 }
 
 .page > h2 {
@@ -38,4 +41,24 @@ a {
 
 .page:hover {
   background-color: #282828;
+}
+
+.label-new,
+.label-soon {
+  font-size: 17pt;
+  position: absolute;
+  top: -15px;
+  right: 30px;
+}
+
+.label-new {
+  color: #00aaff;
+}
+
+.label-soon {
+  color: #afaf00;
+}
+
+.in-progress {
+  opacity: 0.5;
 }
