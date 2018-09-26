@@ -61,4 +61,30 @@ a {
 
 .in-progress {
   opacity: 0.5;
+  cursor: pointer;
+}
+
+.info-window {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-window > div {
+  width: 320px;
+  height: 70px;
+  padding: 40px;
+  font-size: 14pt;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.-hidden {
+  visibility: hidden;
 }
