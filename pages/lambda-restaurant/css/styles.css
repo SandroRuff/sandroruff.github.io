@@ -1,17 +1,15 @@
 body {
   background-image: url('../img/reservations-pattern.png');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header,
-.wrapper,
+main,
 footer {
-  width: 1600px;
-  margin: 0 auto;
-}
-
-.wrapper {
-  min-height: calc(100vh - 320px);
-  position: relative;
+  width: 100%;
+  max-width: 1600px;
 }
 
 h1 {
@@ -23,7 +21,6 @@ h1 {
   width: 1300px;
   position: absolute;
   top: 0;
-  left: 150px;
   box-shadow: 0 -2em 20em 5em black;
 }
 
@@ -31,7 +28,6 @@ header {
   height: 159px;
   position: absolute;
   top: 0;
-  left: 0;
 }
 
 header > * {
@@ -89,6 +85,7 @@ header .social-icons li:first-child {
 
 .home {
   padding-top: 215px;
+  text-align: center;
 }
 
 .home .caption {
@@ -242,8 +239,6 @@ header .social-icons li:first-child {
   font-family: 'YesevaOne';
   color: #cc9900;
   font-size: 0;
-  background-color: #fff;
-  background-image: url('../img/menu-pattern.png');
   position: relative;
 }
 
@@ -297,21 +292,24 @@ header .social-icons li:first-child {
 }
 
 .menu .special {
-  background-image: url('../img/menu-border.png');
+  border: 1px solid rgba(200, 159, 45, 0.67);
+  width: 429px;
+  height: 58px;
 }
 
-.menu .special-board {
-  width: 69px;
-  height: 17px;
+.menu .special-label {
+  width: 70px;
+  height: 22px;
   background-color: rgba(200, 159, 45, 0.67);
   position: absolute;
-  right: 0;
+  right: -1px;
   top: -22px;
   font-family: 'OpenSans-regular';
   font-size: 13px;
   color: #fff;
-  text-align: center;
-  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu .name,
