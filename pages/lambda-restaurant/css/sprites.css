@@ -1,0 +1,101 @@
+.social-sprite-1,
+.social-sprite-2,
+.social-sprite-3,
+.social-sprite-4,
+.social-sprite-5,
+.social-sprite-6,
+.social-sprite-7 {
+  background: url(../img/social.png) no-repeat;
+}
+
+.social-sprite-1 {
+  background-position: 0 0;
+  width: 9px;
+  height: 16px;
+}
+
+.social-sprite-2 {
+  background-position: -9px 0;
+  width: 14px;
+  height: 16px;
+}
+
+.social-sprite-3 {
+  background-position: -23px 0;
+  width: 13px;
+  height: 14px;
+}
+
+.social-sprite-4 {
+  background-position: -37px 0;
+  width: 14px;
+  height: 15px;
+}
+
+.social-sprite-5 {
+  background-position: 0 -17px;
+  width: 19px;
+  height: 16px;
+}
+
+.social-sprite-6 {
+  background-position: -19px -16px;
+  width: 18px;
+  height: 21px;
+}
+
+.social-sprite-7 {
+  background-position: -37px -16px;
+  width: 10px;
+  height: 20px;
+}
+
+.bg-sprite-1,
+.bg-sprite-2,
+.bg-sprite-3,
+.bg-sprite-4,
+.bg-sprite-5,
+.bg-sprite-6 {
+  background: url(../img/backgrounds.png) no-repeat;
+  width: 1600px;
+}
+
+.bg-sprite-1 {
+  background-position: 0 0;
+  height: 535px;
+}
+
+.bg-sprite-2 {
+  background-position: 0 -750px;
+  height: 758px;
+}
+
+.bg-sprite-3 {
+  background-position: 0 -1508px;
+  height: 658px;
+}
+
+.cards-sprite-1,
+.cards-sprite-2,
+.cards-sprite-3,
+.cards-sprite-4 {
+  background: url(../img/cards.png) no-repeat;
+  width: 22px;
+  height: 15px;
+}
+
+.cards-sprite-1 {
+  background-position: 0 0;
+}
+
+.cards-sprite-2 {
+  background-position: -22px 0;
+}
+
+.cards-sprite-3 {
+  background-position: -44px 0;
+}
+
+.cards-sprite-4 {
+  background-position: -66px 0;
+}
