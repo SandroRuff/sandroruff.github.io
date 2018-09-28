@@ -49,6 +49,7 @@ a {
   position: absolute;
   top: -15px;
   right: 30px;
+  font-weight: bold;
 }
 
 .label-new {
@@ -73,6 +74,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 
 .info-window > div {
@@ -85,6 +88,9 @@ a {
   border-radius: 5px;
 }
 
-.-hidden {
-  visibility: hidden;
+h2,
+.label-new,
+.label-soon,
+.info-window > div {
+  user-select: none;
 }

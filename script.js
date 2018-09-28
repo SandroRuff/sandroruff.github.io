@@ -3,12 +3,17 @@ const elementsInProgress = document.querySelectorAll('.in-progress');
 const elementsInProgressLength = elementsInProgress.length;
 
 const hideInfoWindow = function() {
-  infoWindow.classList.add('-hidden');
+  infoWindow.style.opacity = 0;
+  setTimeout(() => {
+    infoWindow.style.visibility = 'hidden';
+    elementsInProgress.style.color = 'red';
+  }, 400);
 };
 
 for (let i = 0; i < elementsInProgressLength; i++) {
   elementsInProgress[i].addEventListener('click', () => {
-    infoWindow.classList.remove('-hidden');
+    infoWindow.style.visibility = 'visible';
+    infoWindow.style.opacity = 1;
   });
 }
 
