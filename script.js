@@ -6,7 +6,6 @@ const hideInfoWindow = function() {
   infoWindow.style.opacity = 0;
   setTimeout(() => {
     infoWindow.style.visibility = 'hidden';
-    elementsInProgress.style.color = 'red';
   }, 400);
 };
 
