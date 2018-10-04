@@ -1,67 +1,54 @@
 body {
-  background-color: #121212;
-  font-family: 'Noto Serif JP', sans-serif;
+  background-color: #333;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
 }
 
 h1 {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+  display: none;
 }
 
 .links-wrapper {
   width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.links-wrapper::before {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('../img/background.jpg') no-repeat center center / cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.4;
 }
 
 a {
   text-decoration: none;
 }
 
-.page {
-  width: 800px;
-  height: 100px;
-  background-color: #181818;
+.link-to-page,
+.info-window > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  border: 2px solid #ffffff10;
-  border-radius: 5px;
 }
 
-.page > h2 {
-  font-size: 26pt;
+.link-to-page:nth-child(even) {
+  background-color: rgba(51, 51, 51, 0.7);
+}
+
+.link-to-page > h2 {
+  font-size: 1.5em;
   color: #f4f4f4;
 }
 
-.page:hover {
-  background-color: #282828;
-}
-
-.label-new,
-.label-soon {
-  font-size: 17pt;
-  position: absolute;
-  top: -15px;
-  right: 30px;
-  font-weight: bold;
-}
-
-.label-new {
-  color: #00aaff;
-}
-
-.label-soon {
-  color: #afaf00;
-}
-
 .in-progress {
-  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -80,18 +67,33 @@ a {
 }
 
 .info-window > div {
-  width: 320px;
-  height: 70px;
-  padding: 40px;
-  font-size: 14pt;
+  width: 100%;
+  height: 40vw;
+  padding: 2em;
+  font-size: 1.4em;
   text-align: center;
   background-color: #f4f4f4;
-  border-radius: 5px;
 }
 
 h2,
-.label-new,
-.label-soon,
 .info-window > div {
   user-select: none;
+}
+
+/* Media Query */
+@media (min-width: 640px) {
+  body {
+    font-size: 18px;
+  }
+
+  .info-window > div {
+    width: 55vw;
+    height: 15vw;
+  }
+}
+
+@media (min-width: 900px) {
+  .links-wrapper {
+    font-size: 22px;
+  }
 }

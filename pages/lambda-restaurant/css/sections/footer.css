@@ -58,6 +58,11 @@ footer .location ul {
   width: 5em;
 }
 
+footer ul img {
+  display: block;
+  max-height: 1.2em;
+}
+
 /* Media Query */
 @media (max-width: 1199px) {
   footer {
