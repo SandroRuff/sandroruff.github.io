@@ -33,7 +33,7 @@ a {
 }
 
 .link-to-page,
-.info-window > div {
+.info-window .notify {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,17 +66,24 @@ a {
   transition: opacity 0.4s;
 }
 
-.info-window > div {
-  width: 100%;
+.info-window .notify {
+  width: 0;
   height: 40vw;
   padding: 2em;
   font-size: 1.4em;
   text-align: center;
   background-color: #f4f4f4;
+  transition: width 1s;
+}
+
+.info-window .notify p {
+  opacity: 0;
+  transition: opacity 0.3s;
+  /* transition-delay: 1s; */
 }
 
 h2,
-.info-window > div {
+.info-window .notify {
   user-select: none;
 }
 
@@ -86,8 +93,8 @@ h2,
     font-size: 18px;
   }
 
-  .info-window > div {
-    width: 55vw;
+  .info-window .notify {
+    width: 0;
     height: 15vw;
   }
 }
