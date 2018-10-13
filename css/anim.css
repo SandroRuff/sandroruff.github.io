@@ -1,0 +1,11 @@
+@keyframes pullAndPush {
+  0% {
+    transform: translateY(-10%);
+  }
+  66% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}

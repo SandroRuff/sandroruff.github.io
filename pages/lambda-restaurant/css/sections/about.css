@@ -68,7 +68,6 @@
       'dish-image' auto
       / auto;
     align-items: center;
-    grid-row-gap: 4em;
     font-size: 14px;
     padding-top: 6em;
     padding-bottom: 4em;
@@ -83,8 +82,7 @@
   }
 
   .about .dish-image {
-    width: 55vw;
-    height: 55vw;
+    display: none;
   }
 }
 

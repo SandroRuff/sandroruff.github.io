@@ -1,53 +1,48 @@
 body {
-  background-color: #333;
-  font-family: 'Raleway', sans-serif;
-  font-size: 14px;
-}
-
-h1 {
-  display: none;
-}
-
-.links-wrapper {
-  width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
+  width: 100%;
+  background-color: #333;
+  position: relative;
+  font-family: 'Muli', sans-serif;
 }
 
-.links-wrapper::before {
-  content: ' ';
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url('../img/background.jpg') no-repeat center center / cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0.4;
+svg {
+  fill: #ffffff;
+}
+
+.slide {
+  visibility: visible;
+  transition: transform 0.7s cubic-bezier(0.55, 0.05, 0.35, 0.95);
+  will-change: transform;
+}
+
+.-before {
+  transform: translateY(-100%);
+  z-index: 7;
+  visibility: hidden;
+}
+
+.-current {
+  transform: translate3d(0, 0, 0) translateY(0%);
+  z-index: 10;
+}
+
+.-after {
+  transform: translateY(100%);
+  z-index: 7;
+  visibility: hidden;
+}
+
+.-active {
+  transition: transform 0.7s cubic-bezier(0.55, 0.05, 0.35, 0.95), visibility 0.001s 0.7s;
 }
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
-.link-to-page,
-.info-window .notify {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.link-to-page:nth-child(even) {
-  background-color: rgba(51, 51, 51, 0.7);
-}
-
-.link-to-page > h2 {
-  font-size: 1.5em;
-  color: #f4f4f4;
-}
-
+/* INFO WINDOW */
 .in-progress {
   cursor: pointer;
 }
@@ -63,44 +58,38 @@ a {
   justify-content: center;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: opacity 0.4s cubic-bezier(0.55, 0.05, 0.35, 0.95);
+  z-index: 200;
 }
 
 .info-window .notify {
   width: 0;
-  height: 40vw;
+  height: 20%;
   padding: 2em;
   font-size: 1.4em;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #f4f4f4;
-  transition: width 1s;
+  transition: width 0.6s;
 }
 
 .info-window .notify p {
   opacity: 0;
-  transition: opacity 0.3s;
-  /* transition-delay: 1s; */
+  transition: opacity 0.3s cubic-bezier(0.55, 0.05, 0.35, 0.95);
 }
 
-h2,
 .info-window .notify {
   user-select: none;
 }
 
-/* Media Query */
-@media (min-width: 640px) {
-  body {
-    font-size: 18px;
+@media (min-width: 768px) {
+  body::before {
+    background-position-x: center;
   }
 
-  .info-window .notify {
-    width: 0;
-    height: 15vw;
-  }
-}
-
-@media (min-width: 900px) {
-  .links-wrapper {
+  .slide {
     font-size: 22px;
   }
 }

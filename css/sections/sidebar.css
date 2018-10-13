@@ -1,0 +1,54 @@
+.sidebar {
+  width: calc(90vw - 5em);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  padding-top: 1em;
+  padding-right: 1em;
+  padding-left: 2.5em;
+  background-color: #333;
+  transition: transform 0.5s cubic-bezier(0.55, 0.05, 0.35, 0.95);
+  z-index: 100;
+  font-family: 'Raleway', sans-serif;
+}
+
+.-visible-sidebar {
+  transform: translateX(0%);
+}
+
+.sidebar .close {
+  opacity: 0.5;
+  float: right;
+}
+
+.sidebar ul {
+  padding-top: 4em;
+}
+
+.sidebar li {
+  padding-top: 2em;
+}
+
+.sidebar ul a {
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.sidebar .logo {
+  position: absolute;
+  bottom: 3em;
+}
+
+/*Large Tablet*/
+@media (min-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+/*Medium Tablet*/
+@media (min-width: 480px) {
+}

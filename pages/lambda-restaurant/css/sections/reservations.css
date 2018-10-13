@@ -134,16 +134,8 @@ input {
     align-items: center;
   }
 
-  .reservation {
-    margin-bottom: 6em;
-  }
-
   .reservations .images {
-    height: 41vw;
-  }
-
-  .reservations .images img {
-    width: 20vw;
+    display: none;
   }
 }
 
