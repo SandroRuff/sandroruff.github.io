@@ -1,4 +1,0 @@
-<ul>
-  <li *ngFor="let item of items; let i = index" (click)="onListClick($event.target.innerText)" [class.-selected]="item['isSelected']">
-    {{item['title']}}</li>
-</ul>

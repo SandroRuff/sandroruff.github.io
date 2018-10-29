@@ -1,8 +1,0 @@
-<nav class="sidebar" [class.-visible-sidebar]="isVisible">
-  <svg class="close" width="2.5em" height="2.5em" (click)="hideSidebar()">
-    <use xlink:href="#btn-close" />
-  </svg>
-  <ul (click)="onSidebarListClick($event.target.innerText)">
-    <li *ngFor="let item of items; let i = index" [class.-selected]="item['isSelected']">{{ item['title'] }}</li>
-  </ul>
-</nav>
