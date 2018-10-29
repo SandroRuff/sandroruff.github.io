@@ -9,6 +9,7 @@
   font-family: 'Raleway', sans-serif;
   display: table;
   color: #fff;
+  box-shadow: 0px -10px 24px 8px rgba(0,0,0,0.6);
 }
 
 .panel > * {
@@ -22,7 +23,7 @@ app-navigate-button {
 
 .panel::before {
   width: 100vw;
-  height: 6.3375em; /* 6.4375em*/
+  height: 6.4375em; /* 6.4375em*/
   content: ' ';
   display: block;
   position: fixed;
@@ -50,6 +51,6 @@ app-navigate-button {
   }
 
   .panel::before {
-    height: 6.775em;  /* 6.875em*/
+    height: 6.875em;  /* 6.875em*/
   }
 }
