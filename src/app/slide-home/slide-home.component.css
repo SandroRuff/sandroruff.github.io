@@ -1,0 +1,80 @@
+#home {
+  width: 60vw;
+  height: 65vh;
+  color: #fff;
+  position: fixed;
+  z-index: 10;
+  padding-top: 35vh;
+  padding-right: 20vw;
+  padding-left: 20vw;
+}
+
+#home .main-text {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+}
+
+#home .sub-text {
+  font-size: 1.5em;
+}
+
+#home .btn-move-down {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 1em 0;
+  opacity: 0.5;
+  transform: translateY(-10%);
+}
+
+/*Large Tablet*/
+@media (min-width: 768px) {
+  #home {
+    font-size: 1.4em;
+  }
+
+  #home .main-text {
+    text-transform: uppercase;
+  }
+
+  /* Animation States */
+  .-current .main-text {
+    transform: translateX(150%);
+    animation: show 0.7s cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s 1 forwards;
+  }
+
+  .-current .sub-text {
+    transform: translateX(150%);
+    animation: show 0.7s cubic-bezier(0.075, 0.82, 0.165, 1) 0.9s 1 forwards;
+  }
+
+  .-current .btn-move-down {
+    opacity: 0;
+    animation: pullAndPush 1s cubic-bezier(0.55, 0.05, 0.35, 0.95) 1s infinite alternate,
+              showBtn 2s ease-in 1 forwards;
+  }
+}
+
+/* KeyFrames */
+@keyframes pullAndPush {
+  0% {
+    transform: translateY(-10%);
+  }
+  66% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes showBtn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

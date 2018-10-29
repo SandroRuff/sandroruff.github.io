@@ -1,0 +1,34 @@
+<section id="projects" class="slide" [class.-active]="stateClasses.isActive" [class.-before]="stateClasses.isBefore"
+  [class.-current]="stateClasses.isCurrent" [class.-after]="stateClasses.isAfter">
+  <!-- Desktop -->
+  <div class="projects-wrapper desktop" *ngIf="isLargeTabletWidth()">
+    <div class="project-links-wrapper">
+      <ul>
+        <li class="project-name" *ngFor="let project of projects; let i = index" (click)="updateIndex(i)"
+          [class.-selected]="isSelected(i)">{{
+          project.name | uppercase }}</li>
+      </ul>
+    </div>
+    <div class="project-overview">
+      <div class="overview-wrapper">
+        <p class="name">{{ projects[projectIndex].name | uppercase }}</p>
+        <p class="description">{{ projects[projectIndex].description }}</p>
+        <p class="tools">Tools: {{ projects[projectIndex].tools }}</p>
+        <div class="button"><a href="{{ projects[projectIndex].link }}" target="_blank">VIEW PROJECT</a></div>
+      </div>
+    </div>
+  </div>
+  <!-- Mobile -->
+  <div class="projects-wrapper mobile" *ngIf="!isLargeTabletWidth()">
+    <div *ngFor="let project of projects; let i = index" (click)="updateIndex(i)">
+      <div class="project-name">{{ project.name | uppercase }}</div>
+      <div class="project-overview" *ngIf=" i === projectIndex">
+        <div class="overview-wrapper">
+          <p class="description">{{ project.description }}</p>
+          <p class="tools">Tools: {{ project.tools }}</p>
+          <div class="button"><a href="{{ project.link }}" target="_blank">VIEW PROJECT</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

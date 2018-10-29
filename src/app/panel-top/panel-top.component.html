@@ -1,0 +1,5 @@
+<div class="panel" [class.-white]="isSlideCurrent">
+  <app-logo-combined (click)="onLogoClick()"></app-logo-combined>
+  <app-panel-top-list (clickOnList)="onListClick($event)"></app-panel-top-list>
+  <app-navigate-button (click)="onNavBtnClick()"></app-navigate-button>
+</div>

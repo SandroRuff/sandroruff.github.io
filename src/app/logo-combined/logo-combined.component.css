@@ -1,0 +1,21 @@
+div {
+  height: auto;
+  display: table-cell;
+  cursor: pointer;
+}
+
+svg:last-child {
+  display: none;
+  margin-left: 1em;
+}
+
+svg {
+  vertical-align: middle;
+}
+
+/*Large Tablet*/
+@media (min-width: 768px) {
+  svg:last-child {
+    display: inline-block;
+  }
+}

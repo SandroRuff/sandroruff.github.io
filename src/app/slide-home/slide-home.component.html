@@ -1,0 +1,10 @@
+<section id="home" class="slide" [class.-active]="stateClasses.isActive" [class.-before]="stateClasses.isBefore"
+  [class.-current]="stateClasses.isCurrent" [class.-after]="stateClasses.isAfter">
+  <div class="wrapper">
+    <p class="main-text">{{ name }}</p>
+    <p class="sub-text">{{ position }}</p>
+  </div>
+  <svg class="btn-move-down" width="3.125em" height="3.125em">
+    <use xlink:href="#btn-move-down" />
+  </svg>
+</section>
