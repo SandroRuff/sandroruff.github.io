@@ -61,13 +61,34 @@ export class PageSliderService {
     this.moveSlide(0);
   }
 
-  // KeyEvent Listeners
+  // KeyEvent Listener
   handleKeyboardEvent(key) {
-    if ((key === 'ArrowUp') && (this.currentSlide - 1 > -1)) {
+    if ((key === 'ArrowUp') && (this.currentSlide > 0)) {
       this.moveSlide(this.currentSlide - 1);
     }
-    if ((key === 'ArrowDown') && (this.currentSlide + 1 < 4)) {
+    if ((key === 'ArrowDown') && (this.currentSlide < 3)) {
       this.moveSlide(this.currentSlide + 1);
+    }
+  }
+
+  // WheelEvent Listener
+  delta: number = 0;
+  canMove = true;
+  handleWheelEvent($event) {
+    if (this.canMove) {
+      this.delta += $event.deltaY || $event.detail || $event.wheelDelta;
+      if (this.delta >= 120 && (this.currentSlide < 3)) {
+        this.canMove = false;
+        this.moveSlide(this.currentSlide + 1);
+      }
+      else if (this.delta <= -120 && (this.currentSlide > 0)) {
+        this.canMove = false;
+        this.moveSlide(this.currentSlide - 1);
+      }
+      setTimeout(() => {
+        this.delta = 0;
+        this.canMove = true;
+      }, 1000);
     }
   }
 }

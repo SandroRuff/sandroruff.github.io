@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { PageSliderService } from './page-slider.service';
+import { fromEvent } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -29,9 +31,18 @@ export class AppComponent implements OnInit {
     this.isSidebarVisible = !this.isSidebarVisible;
   }
 
-  // KeyEvent Listeners
+  // KeyEvent Listener
   @HostListener('document:keydown', ['$event.key'])
   handleKeyboardEvent(key) {
     this.pageSliderService.handleKeyboardEvent(key);
+  }
+
+  wheelEvent = fromEvent(document, 'wheel').pipe(map(event => {
+    this.pageSliderService.handleWheelEvent(event);
+  }));
+  subscribe = this.wheelEvent.subscribe();
+
+  ngOnDestroy() {
+    this.subscribe.unsubscribe();
   }
 }
