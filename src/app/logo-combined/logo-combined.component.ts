@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './logo-combined.component.html',
   styleUrls: ['./logo-combined.component.css']
 })
-export class LogoCombinedComponent {
-
-}
+export class LogoCombinedComponent { }

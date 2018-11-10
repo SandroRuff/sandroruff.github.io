@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, DoCheck } from '@angular/core';
 import { NavListService } from '../nav-list.service';
 import { PageSliderService } from '../page-slider.service';
 
@@ -7,7 +7,7 @@ import { PageSliderService } from '../page-slider.service';
   templateUrl: './panel-top-list.component.html',
   styleUrls: ['./panel-top-list.component.css']
 })
-export class PanelTopListComponent implements OnInit {
+export class PanelTopListComponent implements OnInit, DoCheck {
   @Output() clickOnList = new EventEmitter<any>();
 
   items: object[];

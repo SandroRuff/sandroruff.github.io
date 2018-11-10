@@ -6,20 +6,17 @@ import { Component, OnInit, HostListener, Input } from '@angular/core';
   styleUrls: ['./slide-projects.component.css']
 })
 export class SlideProjectsComponent implements OnInit {
+  @Input() stateClasses: object;
 
   innerWidth: number;
-
-  @Input() stateClasses: object;
-  ngOnInit() {
-    this.innerWidth = window.innerWidth;
-  }
+  projectIndex = 0;
 
   projects: object[] = [
     {
       'name': 'Footbal Stats',
       'description': 'World Football is the #1 reliable source for football stats from around the world. From Aghanistan to Zimbabwe, we cover football results, fixtures and stats in +135 countries.',
       'tools': 'Angular, HTML5, CSS3, TS, JS, Animation',
-      'link': 'https://github.com/SandroRuff/foot-stats'
+      'link': 'https://sandroruff.github.io/football-stats'
     },
     {
       'name': 'Lambda Restaurant',
@@ -27,12 +24,14 @@ export class SlideProjectsComponent implements OnInit {
       'tools': 'HTML5, CSS3, JS, Animation',
       'link': 'https://github.com/SandroRuff/lambda-restaurant'
     }
-  ]
+  ];
 
-  projectIndex: number = 0;
+  ngOnInit() {
+    this.innerWidth = window.innerWidth;
+  }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  @HostListener('window:resize')
+  onResize() {
     this.innerWidth = window.innerWidth;
   }
 
@@ -41,7 +40,7 @@ export class SlideProjectsComponent implements OnInit {
   }
 
   updateIndex(index) {
-    if (index != this.projectIndex) {
+    if (index !== this.projectIndex) {
       this.projectIndex = index;
     }
   }

@@ -9,7 +9,7 @@ export class SlideContactComponent {
 
   @Input() stateClasses: object;
 
-  email: string = 'yorsh.alexander@gmail.com';
+  email = 'yorsh.alexander@gmail.com';
   links: object[] = [
     {
       'name': 'Github',
@@ -23,6 +23,5 @@ export class SlideContactComponent {
       'name': 'LinkedIn',
       'link': 'https://www.linkedin.com/in/alexander-yorsh'
     }
-  ]
-
+  ];
 }

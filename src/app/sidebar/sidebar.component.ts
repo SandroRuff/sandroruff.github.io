@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, DoCheck } from '@angular/core';
 import { NavListService } from '../nav-list.service';
 import { PageSliderService } from '../page-slider.service';
 
@@ -7,7 +7,7 @@ import { PageSliderService } from '../page-slider.service';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, DoCheck {
   @Input() isVisible: boolean;
   @Output() hide = new EventEmitter<any>();
   @Output() clickOnList = new EventEmitter<any>();

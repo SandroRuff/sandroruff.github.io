@@ -9,7 +9,7 @@ export class SlideHomeComponent {
 
   @Input() stateClasses: object;
 
-  name: string = 'Sandro Ruff';
-  position: string = 'Frontend Developer';
+  name = 'Sandro Ruff';
+  position = 'Frontend Developer';
 
 }

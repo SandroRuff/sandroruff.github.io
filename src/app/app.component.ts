@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { PageSliderService } from './page-slider.service';
 import { fromEvent } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,15 +8,23 @@ import { map } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   currentStyles: object[];
-  isSidebarVisible: boolean = false;
+  isSidebarVisible = false;
+
+  wheelEvent = fromEvent(document, 'wheel').pipe(map(event => {
+    this.pageSliderService.handleWheelEvent(event);
+  }));
+  subscribe = this.wheelEvent.subscribe();
 
   constructor(private pageSliderService: PageSliderService) { }
 
   ngOnInit() {
     this.currentStyles = this.pageSliderService.currentStyles;
+  }
+  ngOnDestroy() {
+    this.subscribe.unsubscribe();
   }
 
   onListClick(item: number) {
@@ -35,14 +43,5 @@ export class AppComponent implements OnInit {
   @HostListener('document:keydown', ['$event.key'])
   handleKeyboardEvent(key) {
     this.pageSliderService.handleKeyboardEvent(key);
-  }
-
-  wheelEvent = fromEvent(document, 'wheel').pipe(map(event => {
-    this.pageSliderService.handleWheelEvent(event);
-  }));
-  subscribe = this.wheelEvent.subscribe();
-
-  ngOnDestroy() {
-    this.subscribe.unsubscribe();
   }
 }
